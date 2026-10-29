@@ -25,4 +25,4 @@ python tools/subset_fonts.py <orchid-fonts-dir> fonts
 
 ## Photographs
 
-The portrait on Lately lives in `images/`, cropped to 4:5 and exported as WebP at 256 and 384 pixels wide, with metadata stripped. The 3:2 photograph on So far sits under Alongside, exported the same way at 560 and 1120 pixels wide. It loads lazily, since it sits below the first screen.
+The portrait on Lately lives in `images/`, cropped to 4:5 and exported as WebP at 256 and 384 pixels wide, with metadata stripped. The 3:2 photograph on So far sits in the student council entry of the timeline, exported the same way at 560 and 1120 pixels wide. It loads lazily, since it sits below the first screen.
