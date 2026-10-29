@@ -33,7 +33,8 @@ p{margin:0}
 .how a{color:var(--ink-2)}
 .how a:hover{color:var(--accent)}
 .portrait{display:block;width:112px;height:auto;aspect-ratio:4/5;margin:0 0 32px;object-fit:cover;border-radius:2px;background:var(--ph)}
-.photo{display:flex;align-items:flex-end;aspect-ratio:3/2;margin:0;padding:12px 14px;border-radius:2px;background:var(--ph);font-size:12px;line-height:1.4;color:var(--muted)}
+.shot{margin:32px 0 0}
+.photo{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:2px;background:var(--ph)}
 .cap{margin-top:10px;font-size:13px;line-height:1.3;color:var(--muted)}
 section.sec{margin-top:clamp(56px,7vw,80px);padding-top:20px;border-top:1px solid var(--line)}
 .lab{margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
@@ -147,13 +148,9 @@ UNTIL = '''<main>
 <section class="col sec">
 <h2 class="lab">Alongside</h2>
 <p class="lede">Chair of the computer science student council. Student representative for digitalization at the University of Bonn. Member of the advisory board of git.nrw.</p>
-</section>
-
-<section class="col sec">
-<h2 class="lab">Photograph</h2>
-<figure style="margin:0">
-<div class="photo" role="img" aria-label="Photograph of Kolja (placeholder)">Photograph of you · 3:2</div>
-<figcaption class="cap">[Place], [year]</figcaption>
+<figure class="shot">
+<img class="photo" src="/images/chair-560.webp" srcset="/images/chair-560.webp 560w, /images/chair-1120.webp 1120w" sizes="(min-width: 608px) 560px, calc(100vw - 48px)" width="560" height="373" alt="Kolja at the lectern of a seminar room, glancing up from a laptop, seen through an open door" loading="lazy" decoding="async">
+<figcaption class="cap">Chairing one of my last student council meetings. Bonn, 2025.</figcaption>
 </figure>
 </section>
 
