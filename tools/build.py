@@ -1,0 +1,177 @@
+"""Write the site's three pages from one stylesheet.
+
+Usage: python tools/build.py [out-dir]
+
+Every page inlines the same styles, so the first response paints the
+page without another request. Edit the copy and styles here, then run it.
+"""
+
+import sys
+
+out = sys.argv[1] if len(sys.argv) > 1 else "."
+CSS = '''@font-face{font-family:"Source Serif 4";src:url(/fonts/serif.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(/fonts/sans.woff2) format("woff2");font-weight:400 600;font-display:swap}
+@font-face{font-family:Fraunces;src:url(/fonts/italic.woff2) format("woff2");font-weight:300 400;font-style:italic;font-display:swap}
+:root{--paper:#fff;--ink:#111;--ink-2:#3a3835;--muted:#5e5b57;--faint:#9a968f;--line:#e4e2de;--accent:#a8336d;--accent-hover:#8c2a5b;--accent-tint:#f6e6ee;--ph:#efedea;--sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Source Serif 4",Georgia,serif;--italic:Fraunces,Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--paper:#141312;--ink:#f1eee9;--ink-2:#d8d4cd;--muted:#a7a29a;--faint:#75706a;--line:#2f2c29;--accent:#e183b3;--accent-hover:#eda3c8;--accent-tint:#3a2130;--ph:#211f1d}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent-tint)}
+a{color:var(--accent);text-decoration:none;transition:color 140ms cubic-bezier(.25,.8,.25,1)}
+a:hover{color:var(--accent-hover)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.col{width:min(560px,100% - 48px);margin-inline:auto;position:relative}
+.wide{width:min(1040px,100% - 48px);margin-inline:auto}
+header{display:flex;justify-content:space-between;align-items:center;height:72px;font-size:15px}
+.name{font-weight:600;color:var(--ink)}
+nav{display:flex;gap:28px}
+nav a{color:var(--ink-2)}
+nav a:hover,nav a[aria-current]{color:var(--accent)}
+.whoah{margin-top:clamp(64px,9vw,120px);margin-bottom:0;text-indent:-.04em;font:italic 300 clamp(104px,19vw,272px)/.9 var(--italic);letter-spacing:-.045em;word-spacing:.1em;font-variant-numeric:lining-nums}
+.intro{margin-top:clamp(56px,7vw,96px)}
+p{margin:0}
+.lede{font:400 19px/1.55 var(--serif);text-wrap:pretty}
+.lede+.lede{margin-top:16px}
+.meta{margin-top:20px;font-size:13px;line-height:1.45;color:var(--muted)}
+.portrait{display:flex;align-items:flex-end;width:112px;aspect-ratio:4/5;margin:0 0 32px;padding:8px 10px;border-radius:2px;background:var(--ph);font-size:11px;line-height:1.3;color:var(--muted)}
+.photo{display:flex;align-items:flex-end;aspect-ratio:3/2;margin:0;padding:12px 14px;border-radius:2px;background:var(--ph);font-size:12px;line-height:1.4;color:var(--muted)}
+.cap{margin-top:10px;font-size:13px;line-height:1.3;color:var(--muted)}
+section.sec{margin-top:clamp(56px,7vw,80px);padding-top:20px;border-top:1px solid var(--line)}
+.lab{margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.line{display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-height:44px;padding:10px 0;border-bottom:1px solid var(--line)}
+.line span{color:var(--muted)}
+cite{font:italic 400 1.02em/1 var(--italic)}
+ol.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:16px;padding:14px 0 16px;border-bottom:1px solid var(--line)}
+.tl li:first-child{padding-top:2px}
+.yr{color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.what{font:400 19px/1.4 var(--serif)}
+.how{margin-top:2px;font-size:14px;line-height:1.45;color:var(--muted)}
+footer{margin-top:clamp(80px,9vw,112px);padding:24px 0 64px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:13px;line-height:1.45;color:var(--muted)}
+@media (min-width:1200px){
+.lab{position:absolute;left:-168px;top:-1px;width:168px;margin:0;padding-top:24px;border-top:1px solid var(--line)}
+.portrait{position:absolute;left:-168px;top:6px;width:128px;margin:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}'''
+
+def page(title, desc, current, body):
+    nav = ''.join(
+        f'<a href="{href}"{" aria-current=\"page\"" if key == current else ""}>{label}</a>'
+        for key, href, label in (('now', '/', 'Now'), ('until', '/until-now.html', 'Until now')))
+    meta = f'<meta name="description" content="{desc}">\n' if desc else ''
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+{meta}<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23a8336d'/%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+{CSS}
+</style>
+</head>
+<body>
+<header class="wide">
+<a class="name" href="/">Kolja [Surname]</a>
+<nav aria-label="Main">{nav}</nav>
+</header>
+{body}
+</body>
+</html>
+'''
+
+NOW = '''<main>
+<h1 class="wide whoah">Now</h1>
+
+<section class="col intro">
+<div class="portrait" role="img" aria-label="Portrait of Kolja (placeholder)">Portrait · 4:5</div>
+<p class="lede">I am Kolja. I live in Bonn and build AiNKI, flashcards that come back just before you forget them. This page says what I am doing at the moment. For everything before, see <a href="/until-now.html">Until now</a>.</p>
+<p class="meta">Updated October 29, 2026</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Working on</h2>
+<p class="lede">AiNKI, a flashcard service written in Rust. It schedules every card with FSRS, so a card returns on the day you would otherwise lose it. [Where it stands: private beta, open source, or something else.]</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Learning</h2>
+<p class="lede">[Something you are learning at the moment, and why.]</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Reading</h2>
+<p class="lede"><cite>[Book title]</cite> by [Author].</p>
+</section>
+
+<section class="col sec" id="elsewhere">
+<h2 class="lab">Elsewhere</h2>
+<div class="line"><span>Email</span><a href="mailto:hello@[domain]">hello@[domain]</a></div>
+<div class="line"><span>GitHub</span><a href="https://github.com/vdTwer">vdTwer</a></div>
+</section>
+</main>
+
+<footer class="col">
+<span>No cookies, no trackers, no scripts.</span>
+<span>© 2026</span>
+</footer>'''
+
+UNTIL = '''<main>
+<h1 class="wide whoah">Until now</h1>
+
+<section class="col intro">
+<p class="lede">[Two sentences on the thread that runs through what you have done. Plain facts, no adjectives about yourself.]</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Timeline</h2>
+<ol class="tl" reversed>
+<li><span class="yr">2026</span><div><p class="what">Started AiNKI</p><p class="how">A flashcard service written in Rust, with FSRS scheduling.</p></div></li>
+<li><span class="yr">[Year]</span><div><p class="what">[Role], [Organization]</p><p class="how">[What you did there, in one sentence.]</p></div></li>
+<li><span class="yr">[Year]</span><div><p class="what">[Project or role]</p><p class="how">[What you did there, in one sentence.]</p></div></li>
+<li><span class="yr">[Year]</span><div><p class="what">[Degree], [University]</p><p class="how">[Subject, and a thesis title if there is one.]</p></div></li>
+</ol>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Photograph</h2>
+<figure style="margin:0">
+<div class="photo" role="img" aria-label="Photograph of Kolja (placeholder)">Photograph of you · 3:2</div>
+<figcaption class="cap">[Place], [year]</figcaption>
+</figure>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Tools</h2>
+<p class="lede">Mostly Rust. Also Python, TypeScript and Go.</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">More</h2>
+<p class="lede">A full CV is yours on request. <a href="/#elsewhere">Write to me</a>.</p>
+</section>
+</main>
+
+<footer class="col">
+<span>Updated October 29, 2026</span>
+<span>© 2026</span>
+</footer>'''
+
+MISSING = '''<main>
+<h1 class="wide whoah">Not here</h1>
+<section class="col intro">
+<p class="lede">This page does not exist. Try <a href="/">Now</a> or <a href="/until-now.html">Until now</a>.</p>
+</section>
+</main>'''
+
+for name, args in {
+    'index.html': ('Kolja [Surname] · Now', 'What Kolja is doing right now: building AiNKI, flashcards that come back just before you forget them.', 'now', NOW),
+    'until-now.html': ('Kolja [Surname] · Until now', 'What Kolja has done until now, as a short timeline.', 'until', UNTIL),
+    '404.html': ('Kolja [Surname] · Not found', '', None, MISSING),
+}.items():
+    open(f'{out}/{name}', 'w').write(page(*args))
