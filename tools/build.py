@@ -7,8 +7,13 @@ page without another request. Edit the copy and styles here, then run it.
 """
 
 import sys
+from pathlib import Path
+from urllib.parse import quote
 
 out = sys.argv[1] if len(sys.argv) > 1 else "."
+
+# The icon is inlined like the styles, so a page needs no extra request.
+ICON = "data:image/svg+xml," + quote((Path(__file__).parent.parent / "favicon.svg").read_text().strip(), safe=" :/=;,()'")
 CSS = '''@font-face{font-family:"Source Serif 4";src:url(/fonts/serif.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Schibsted Grotesk";src:url(/fonts/sans.woff2) format("woff2");font-weight:400 600;font-display:swap}
 @font-face{font-family:Fraunces;src:url(/fonts/italic.woff2) format("woff2");font-weight:300 400;font-style:italic;font-display:swap}
@@ -30,6 +35,7 @@ p{margin:0}
 .lede+.lede{margin-top:16px}
 .next{margin-top:24px;font-size:14px;line-height:1.4;font-weight:600}
 .dot{margin:0 6px;color:var(--faint)}
+.end{margin-top:clamp(56px,7vw,80px)}
 .how a{color:var(--ink-2)}
 .how a:hover{color:var(--accent)}
 .portrait{display:block;width:112px;height:auto;aspect-ratio:4/5;margin:0 0 32px;object-fit:cover;border-radius:2px;background:var(--ph)}
@@ -49,7 +55,9 @@ ol.tl{list-style:none;margin:0;padding:0}
 .how{margin-top:2px;font-size:14px;line-height:1.45;color:var(--muted)}
 footer{margin-top:clamp(80px,9vw,112px);padding:24px 0 64px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:13px;line-height:1.45;color:var(--muted)}
 @media (min-width:1200px){
-.lab{position:absolute;left:-168px;top:-1px;width:168px;margin:0;padding-top:24px;border-top:1px solid var(--line)}
+section.sec{padding-top:21px;border-top:0}
+section.sec::before{content:"";position:absolute;top:0;left:-168px;right:0;height:1px;background:var(--line)}
+.lab{position:absolute;left:-168px;top:0;width:168px;margin:0;padding-top:25px}
 .portrait{position:absolute;left:-168px;top:6px;width:128px;margin:0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}'''
@@ -63,7 +71,7 @@ def page(title, desc, body):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 {meta}<meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23a8336d'/%3E%3C/svg%3E">
+<link rel="icon" href="{ICON}">
 <link rel="preload" href="/fonts/italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/sans.woff2" as="font" type="font/woff2" crossorigin>
@@ -124,6 +132,8 @@ NOW = '''<main>
 <div class="line"><span>GitHub</span><a href="https://github.com/vdTwer">vdTwer</a></div>
 <div class="line"><span>LinkedIn</span><a href="https://www.linkedin.com/in/kolja-von-der-twer-57a283377/">kolja-von-der-twer</a></div>
 </section>
+
+<p class="col next end"><a href="/so-far.html">How did I get here? →</a></p>
 </main>
 
 <footer class="col">
@@ -167,6 +177,8 @@ UNTIL = '''<main>
 <h2 class="lab">More</h2>
 <p class="lede">A full CV and references from Telekom Security, the Institute of Computer Science and the AStA are yours on request. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
 </section>
+
+<p class="col next end"><a href="/">Where am I now? →</a></p>
 </main>
 
 <footer class="col">

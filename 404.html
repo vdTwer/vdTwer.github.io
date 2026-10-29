@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kolja von der Twer · Not found</title>
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23a8336d'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1735 1735%22%3E%3Cstyle%3Epath%7Bfill:%23a8336d%7D%40media (prefers-color-scheme:dark)%7Bpath%7Bfill:%23e183b3%7D%7D%3C/style%3E%3Cpath d=%22M508 1400Q503 1424 511 1439Q520 1453 543 1459L592 1472Q611 1480 623 1491Q634 1501 634 1520Q634 1542 616 1556Q598 1569 567 1569H122Q88 1569 76 1556Q64 1544 64 1525Q64 1505 77 1492Q91 1479 112 1473L168 1461Q196 1455 212 1438Q228 1421 239 1389Q249 1352 266 1287Q284 1221 307 1137Q330 1053 355 960Q380 867 405 773Q430 679 451 594Q473 509 489 442Q506 375 513 336Q520 309 512 295Q504 281 480 275L428 262Q406 254 397 244Q387 234 387 217Q387 195 406 182Q426 169 461 169H908Q936 169 948 180Q961 191 961 210Q961 231 947 242Q933 253 907 262L851 277Q826 283 811 297Q795 311 786 340Q774 382 754 453Q735 524 710 615Q685 705 659 804Q633 902 607 998Q582 1093 561 1176Q540 1259 526 1318Q512 1377 508 1400ZM767 851 977 667 1222 1302Q1241 1354 1260 1381Q1280 1407 1312 1407Q1331 1407 1346 1397Q1361 1387 1376 1369Q1400 1348 1424 1355Q1438 1358 1446 1375Q1453 1391 1441 1418Q1419 1472 1380 1511Q1341 1551 1290 1572Q1239 1594 1181 1594Q1105 1594 1063 1556Q1021 1519 990 1435ZM527 1163 498 1074 1246 303Q1302 244 1349 209Q1395 173 1439 157Q1484 142 1532 142Q1601 142 1638 180Q1675 219 1670 277Q1665 340 1624 371Q1582 402 1523 402Q1481 402 1449 390Q1417 377 1378 377Q1339 377 1297 400Q1254 422 1208 470Z%22/%3E%3C/svg%3E">
 <link rel="preload" href="/fonts/italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/sans.woff2" as="font" type="font/woff2" crossorigin>
@@ -31,6 +31,7 @@ p{margin:0}
 .lede+.lede{margin-top:16px}
 .next{margin-top:24px;font-size:14px;line-height:1.4;font-weight:600}
 .dot{margin:0 6px;color:var(--faint)}
+.end{margin-top:clamp(56px,7vw,80px)}
 .how a{color:var(--ink-2)}
 .how a:hover{color:var(--accent)}
 .portrait{display:block;width:112px;height:auto;aspect-ratio:4/5;margin:0 0 32px;object-fit:cover;border-radius:2px;background:var(--ph)}
@@ -50,7 +51,9 @@ ol.tl{list-style:none;margin:0;padding:0}
 .how{margin-top:2px;font-size:14px;line-height:1.45;color:var(--muted)}
 footer{margin-top:clamp(80px,9vw,112px);padding:24px 0 64px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:13px;line-height:1.45;color:var(--muted)}
 @media (min-width:1200px){
-.lab{position:absolute;left:-168px;top:-1px;width:168px;margin:0;padding-top:24px;border-top:1px solid var(--line)}
+section.sec{padding-top:21px;border-top:0}
+section.sec::before{content:"";position:absolute;top:0;left:-168px;right:0;height:1px;background:var(--line)}
+.lab{position:absolute;left:-168px;top:0;width:168px;margin:0;padding-top:25px}
 .portrait{position:absolute;left:-168px;top:6px;width:128px;margin:0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
