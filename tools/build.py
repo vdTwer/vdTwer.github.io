@@ -7,8 +7,13 @@ page without another request. Edit the copy and styles here, then run it.
 """
 
 import sys
+from pathlib import Path
+from urllib.parse import quote
 
 out = sys.argv[1] if len(sys.argv) > 1 else "."
+
+# The icon is inlined like the styles, so a page needs no extra request.
+ICON = "data:image/svg+xml," + quote((Path(__file__).parent.parent / "favicon.svg").read_text().strip(), safe=" :/=;,()'")
 CSS = '''@font-face{font-family:"Source Serif 4";src:url(/fonts/serif.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Schibsted Grotesk";src:url(/fonts/sans.woff2) format("woff2");font-weight:400 600;font-display:swap}
 @font-face{font-family:Fraunces;src:url(/fonts/italic.woff2) format("woff2");font-weight:300 400;font-style:italic;font-display:swap}
@@ -66,7 +71,7 @@ def page(title, desc, body):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 {meta}<meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23a8336d'/%3E%3C/svg%3E">
+<link rel="icon" href="{ICON}">
 <link rel="preload" href="/fonts/italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/sans.woff2" as="font" type="font/woff2" crossorigin>
