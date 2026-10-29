@@ -25,4 +25,4 @@ python tools/subset_fonts.py <orchid-fonts-dir> fonts
 
 ## Photographs
 
-Placeholders mark where photographs go: a 4:5 portrait on Lately and a 3:2 photograph on So far. Replace each placeholder `div` in `tools/build.py` with an `img` that carries `width`, `height` and `alt`. Leave `loading="lazy"` off the portrait so it shows at once.
+The portrait on Lately lives in `images/`, cropped to 4:5 and exported as WebP at 256 and 384 pixels wide, with metadata stripped. A placeholder still marks the 3:2 photograph on So far. Replace it in `tools/build.py` with an `img` that carries `width`, `height` and `alt`, plus `loading="lazy"`, since it sits below the first screen.
