@@ -33,7 +33,7 @@ p{margin:0}
 .how a{color:var(--ink-2)}
 .how a:hover{color:var(--accent)}
 .portrait{display:block;width:112px;height:auto;aspect-ratio:4/5;margin:0 0 32px;object-fit:cover;border-radius:2px;background:var(--ph)}
-.shot{margin:32px 0 0}
+.shot{margin:16px 0 0}
 .photo{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:2px;background:var(--ph)}
 .cap{margin-top:10px;font-size:13px;line-height:1.3;color:var(--muted)}
 section.sec{margin-top:clamp(56px,7vw,80px);padding-top:20px;border-top:1px solid var(--line)}
@@ -82,34 +82,40 @@ NOW = '''<main>
 
 <section class="col intro">
 <img class="portrait" src="/images/portrait-256.webp" srcset="/images/portrait-256.webp 2x, /images/portrait-384.webp 3x" width="128" height="160" alt="Portrait of Kolja von der Twer" decoding="async" fetchpriority="high">
-<p class="lede">I am Kolja. I live in Bonn, study computer science and build AiNKI, flashcards that come back just before you forget them. This page says what I am doing at the moment.</p>
+<p class="lede">I am Kolja. I build software that many people depend on. Right now that means the thirty thousand students of the University of Bonn, a flashcard service of my own and a master’s in computer science. I live between Cologne and Bonn.</p>
 <p class="next"><a href="/so-far.html">How did I get here? →</a></p>
 </section>
 
 <section class="col sec">
+<h2 class="lab">Leading</h2>
+<p class="lede">The student parliament elected me head of IT for the AStA, the student government of the University of Bonn. I lead a team of five, two full-time staff and three students, and turn what people ask for, and what they need but don’t say, into software. Our minutes tool saves about seven hours of work a month. Now we are rebuilding the semester-ticket refund service, which pays six figures back to students every year.</p>
+<p class="lede">I also sit on the advisory board of git.nrw, the shared GitLab of the universities in North Rhine-Westphalia, and speak there for about seven hundred thousand students. Lately we have been talking about how AI should come into it.</p>
+</section>
+
+<section class="col sec">
 <h2 class="lab">Building</h2>
-<p class="lede">AiNKI, a self-hosted flashcard service written in Rust. It schedules every card with FSRS and speaks MCP, so AI agents can write cards and quiz you too. It is open source under the MIT license.</p>
+<p class="lede">AiNKI, because I love learning. I used Anki for years until it grew tedious on an iPhone, and I wasn’t going to pay €30 for the app. So I built my own, and while I was at it, I built more: it schedules every card with FSRS and speaks MCP, so an AI agent can write your cards and quiz you on them. It is written in Rust, self-hosted and open source.</p>
 <p class="next"><a href="https://ainki.twer.net">Try AiNKI</a> <span class="dot" aria-hidden="true">·</span> <a href="https://github.com/vdTwer/AiNKI">Read the source</a></p>
 </section>
 
 <section class="col sec">
-<h2 class="lab">Studying</h2>
-<p class="lede">A master’s in computer science at the University of Bonn. My focus is AI and security: AI as a supply chain, and AI at work in industry. This semester I also started a bachelor’s in English studies.</p>
-</section>
-
-<section class="col sec">
-<h2 class="lab">Leading</h2>
-<p class="lede">I run IT for the AStA, the student government of the University of Bonn, and lead its development team of five. We build small tools for students, such as one that turns receipts into semester-ticket refunds.</p>
-</section>
-
-<section class="col sec">
 <h2 class="lab">Teaching</h2>
-<p class="lede">Exercise groups in programming at the Institute of Computer Science, until March 2027.</p>
+<p class="lede">For three years I have taught programming at the Institute of Computer Science: exercise groups, reviews of more than two hundred student projects in C++ and Python, and five revision courses of up to one hundred students that I started on my own. These days I also teach agentic software engineering, the craft of building software with AI agents. In July I co-led a week-long algorithms workshop for gifted high-school students.</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Studying</h2>
+<p class="lede">A master’s in computer science at the University of Bonn, focused on AI and security, especially AI as a supply chain. Alongside it, a bachelor’s in English, because I love the language and its literature.</p>
 </section>
 
 <section class="col sec">
 <h2 class="lab">Looking for</h2>
-<p class="lede">A working-student role in industry, ideally from February 2027. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
+<p class="lede">A working-student role in large-scale software deployment and architecture, ideally AI-native, from February 2027. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Off the clock</h2>
+<p class="lede">Chess, judo and ballroom dancing, with the ADTV gold badge. And the Western canon, slowly.</p>
 </section>
 
 <section class="col sec" id="elsewhere">
@@ -129,39 +135,37 @@ UNTIL = '''<main>
 <h1 class="wide whoah">So far</h1>
 
 <section class="col intro">
-<p class="lede">I studied cyber security in Bonn and stayed for a master’s in computer science. Along the way I taught, took part in research, worked in threat intelligence and moved from the student council of my faculty to the student government of the whole university.</p>
+<p class="lede">Each step so far has been a little wider than the last. At sixteen I helped build a fraud-detection pipeline at Generali. At university I taught one exercise group, then chaired my faculty’s student council, then took on IT for the student government of all thirty thousand students. Now I speak for seven hundred thousand students across the state.</p>
 <p class="next"><a href="/">Where am I now? →</a></p>
 </section>
 
 <section class="col sec">
 <h2 class="lab">Timeline</h2>
 <ol class="tl" reversed>
-<li><span class="yr">2026</span><div><p class="what">Started AiNKI</p><p class="how">An AI-native flashcard service in Rust. Self-hosted, open source.</p></div></li>
-<li><span class="yr"></span><div><p class="what">Head of IT, AStA, University of Bonn</p><p class="how">Leading a team of five that builds tools for the student government. Since March.</p></div></li>
-<li><span class="yr"></span><div><p class="what">Intern, Cyber Threat Intelligence, Deutsche Telekom Security</p><p class="how">Built Argus, a host intrusion detection system for hardware honeypots, in Go. February to April.</p></div></li>
-<li><span class="yr"></span><div><p class="what">B.Sc. Cyber Security, University of Bonn</p><p class="how">Thesis on social desirability bias and statistical lie detection in self-reported security practices.</p></div></li>
-<li><span class="yr">2025</span><div><p class="what">Co-authored a paper at SOUPS</p><p class="how"><a href="https://www.usenix.org/conference/soups2025/presentation/ortloff">“Replication: ‘No one can hack my mind’ 10 years later,”</a> on how experts and non-experts stay secure online.</p></div></li>
-<li><span class="yr">2023</span><div><p class="what">Tutor, Institute of Computer Science</p><p class="how">Exercise groups in programming, reviews of over 200 student projects and five revision courses of my own.</p></div></li>
+<li><span class="yr">2026</span><div><p class="what">Joined the advisory board of git.nrw</p><p class="how">Speaking for about seven hundred thousand students in the shared GitLab of the universities in North Rhine-Westphalia.</p></div></li>
+<li><span class="yr"></span><div><p class="what">Elected head of IT, AStA, University of Bonn</p><p class="how">Leading the IT of the student government for more than thirty thousand students, with a team of five. Since March.</p></div></li>
+<li><span class="yr"></span><div><p class="what">Cyber Threat Analyst (intern), Deutsche Telekom Security</p><p class="how">Designed and built Argus, a host intrusion detection system for hardware honeypots across several CPU architectures, in Go, plus central alerting for Splunk and Arkime. February to April.</p></div></li>
+<li><span class="yr"></span><div><p class="what">B.Sc. Cyber Security, University of Bonn</p><p class="how">Graded 1.0. My thesis tested whether people report their update behavior truthfully, against what they actually did.</p></div></li>
+<li><span class="yr">2025</span><div><p class="what">Chaired the computer science student council</p><p class="how">The voice of the faculty’s students, until early 2026.</p>
+<figure class="shot">
+<img class="photo" src="/images/chair-560.webp" srcset="/images/chair-560.webp 560w, /images/chair-1120.webp 1120w" sizes="(min-width: 608px) 472px, calc(100vw - 136px)" width="472" height="315" alt="Kolja at the lectern of a seminar room, glancing up from a laptop, seen through an open door" loading="lazy" decoding="async">
+<figcaption class="cap">One of my last meetings as chair. Bonn, 2025. Taken by David.</figcaption>
+</figure></div></li>
+<li><span class="yr"></span><div><p class="what">Elected to the student parliament</p><p class="how">University of Bonn. A seat I still hold.</p></div></li>
+<li><span class="yr"></span><div><p class="what">Co-authored a paper at SOUPS</p><p class="how"><a href="https://www.usenix.org/conference/soups2025/presentation/ortloff">“Replication: ‘No one can hack my mind’ 10 years later,”</a> on how experts and non-experts stay secure online.</p></div></li>
+<li><span class="yr">2023</span><div><p class="what">Started teaching at the Institute of Computer Science</p><p class="how">One exercise group at first. Three years later: more than two hundred project reviews and five revision courses of my own.</p></div></li>
+<li><span class="yr">2021</span><div><p class="what">Software developer (intern), Generali Deutschland</p><p class="how">In tenth grade, at sixteen: helped build an AI-native pipeline that flags fraud in submitted invoices.</p></div></li>
 </ol>
 </section>
 
 <section class="col sec">
-<h2 class="lab">Alongside</h2>
-<p class="lede">Chair of the computer science student council. Student representative for digitalization at the University of Bonn. Member of the advisory board of git.nrw.</p>
-<figure class="shot">
-<img class="photo" src="/images/chair-560.webp" srcset="/images/chair-560.webp 560w, /images/chair-1120.webp 1120w" sizes="(min-width: 608px) 560px, calc(100vw - 48px)" width="560" height="373" alt="Kolja at the lectern of a seminar room, glancing up from a laptop, seen through an open door" loading="lazy" decoding="async">
-<figcaption class="cap">Chairing one of my last student council meetings. Bonn, 2025. Taken by David.</figcaption>
-</figure>
-</section>
-
-<section class="col sec">
-<h2 class="lab">Tools</h2>
-<p class="lede">Mostly Rust and Go. Also Python, TypeScript and C++.</p>
+<h2 class="lab">Working with</h2>
+<p class="lede">Rust and Go for systems, Python and TypeScript for the rest, C++ when I teach. More and more, orchestrating AI agents.</p>
 </section>
 
 <section class="col sec">
 <h2 class="lab">More</h2>
-<p class="lede">A full CV is yours on request. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
+<p class="lede">A full CV and references from Telekom Security, the Institute of Computer Science and the AStA are yours on request. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
 </section>
 </main>
 
@@ -178,8 +182,8 @@ MISSING = '''<main>
 </main>'''
 
 for name, args in {
-    'index.html': ('Kolja von der Twer · Lately', 'Kolja von der Twer studies computer science in Bonn and builds AiNKI, flashcards that come back just before you forget them.', NOW),
-    'so-far.html': ('Kolja von der Twer · So far', 'What Kolja von der Twer has done so far: cyber security in Bonn, threat intelligence at Telekom Security, teaching and AStA IT.', UNTIL),
+    'index.html': ('Kolja von der Twer · Lately', 'Kolja von der Twer builds software that many people depend on, from the IT of the student government at the University of Bonn to AiNKI, a flashcard service.', NOW),
+    'so-far.html': ('Kolja von der Twer · So far', 'How Kolja von der Twer got here: from a fraud-detection pipeline at sixteen to speaking for seven hundred thousand students across North Rhine-Westphalia.', UNTIL),
     '404.html': ('Kolja von der Twer · Not found', '', MISSING),
 }.items():
     open(f'{out}/{name}', 'w').write(page(*args))
