@@ -29,6 +29,9 @@ p{margin:0}
 .lede{font:400 19px/1.55 var(--serif);text-wrap:pretty}
 .lede+.lede{margin-top:16px}
 .next{margin-top:24px;font-size:14px;line-height:1.4;font-weight:600}
+.dot{margin:0 6px;color:var(--faint)}
+.how a{color:var(--ink-2)}
+.how a:hover{color:var(--accent)}
 .portrait{display:flex;align-items:flex-end;width:112px;aspect-ratio:4/5;margin:0 0 32px;padding:8px 10px;border-radius:2px;background:var(--ph);font-size:11px;line-height:1.3;color:var(--muted)}
 .photo{display:flex;align-items:flex-end;aspect-ratio:3/2;margin:0;padding:12px 14px;border-radius:2px;background:var(--ph);font-size:12px;line-height:1.4;color:var(--muted)}
 .cap{margin-top:10px;font-size:13px;line-height:1.3;color:var(--muted)}
@@ -78,34 +81,46 @@ NOW = '''<main>
 
 <section class="col intro">
 <div class="portrait" role="img" aria-label="Portrait of Kolja (placeholder)">Portrait · 4:5</div>
-<p class="lede">I am Kolja. I live in Bonn and build AiNKI, flashcards that come back just before you forget them. This page says what I am doing at the moment.</p>
+<p class="lede">I am Kolja. I live in Bonn, study computer science and build AiNKI, flashcards that come back just before you forget them. This page says what I am doing at the moment.</p>
 <p class="next"><a href="/so-far.html">How did I get here? →</a></p>
 </section>
 
 <section class="col sec">
-<h2 class="lab">Working on</h2>
-<p class="lede">AiNKI, a flashcard service written in Rust. It schedules every card with FSRS, so a card returns on the day you would otherwise lose it. [Where it stands: private beta, open source, or something else.]</p>
+<h2 class="lab">Building</h2>
+<p class="lede">AiNKI, a self-hosted flashcard service written in Rust. It schedules every card with FSRS and speaks MCP, so AI agents can write cards and quiz you too. It is open source under the MIT license.</p>
+<p class="next"><a href="https://ainki.twer.net">Try AiNKI</a> <span class="dot" aria-hidden="true">·</span> <a href="https://github.com/vdTwer/AiNKI">Read the source</a></p>
 </section>
 
 <section class="col sec">
-<h2 class="lab">Learning</h2>
-<p class="lede">[Something you are learning at the moment, and why.]</p>
+<h2 class="lab">Studying</h2>
+<p class="lede">A master’s in computer science at the University of Bonn. My focus is AI and security: AI as a supply chain, and AI at work in industry. This semester I also started a bachelor’s in English studies.</p>
 </section>
 
 <section class="col sec">
-<h2 class="lab">Reading</h2>
-<p class="lede"><cite>[Book title]</cite> by [Author].</p>
+<h2 class="lab">Leading</h2>
+<p class="lede">I run IT for the AStA, the student government of the University of Bonn, and lead its development team of five. We build small tools for students, such as one that turns receipts into semester-ticket refunds.</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Teaching</h2>
+<p class="lede">Exercise groups in programming at the Institute of Computer Science, until March 2027.</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Looking for</h2>
+<p class="lede">A working-student role in industry, ideally from February 2027. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
 </section>
 
 <section class="col sec" id="elsewhere">
 <h2 class="lab">Elsewhere</h2>
-<div class="line"><span>Email</span><a href="mailto:hello@[domain]">hello@[domain]</a></div>
+<div class="line"><span>Email</span><a href="mailto:kolja@twer.net">kolja@twer.net</a></div>
 <div class="line"><span>GitHub</span><a href="https://github.com/vdTwer">vdTwer</a></div>
+<div class="line"><span>LinkedIn</span><a href="https://www.linkedin.com/in/kolja-von-der-twer-57a283377/">kolja-von-der-twer</a></div>
 </section>
 </main>
 
 <footer class="col">
-<span>© 2026 Kolja [Surname] · No cookies, no trackers, no scripts.</span>
+<span>© 2026 Kolja von der Twer · No cookies, no trackers, no scripts.</span>
 <span>Updated October 29, 2026</span>
 </footer>'''
 
@@ -113,18 +128,25 @@ UNTIL = '''<main>
 <h1 class="wide whoah">So far</h1>
 
 <section class="col intro">
-<p class="lede">[Two sentences on the thread that runs through what you have done. Plain facts, no adjectives about yourself.]</p>
+<p class="lede">I studied cyber security in Bonn and stayed for a master’s in computer science. Along the way I taught, took part in research, worked in threat intelligence and moved from the student council of my faculty to the student government of the whole university.</p>
 <p class="next"><a href="/">Where am I now? →</a></p>
 </section>
 
 <section class="col sec">
 <h2 class="lab">Timeline</h2>
 <ol class="tl" reversed>
-<li><span class="yr">2026</span><div><p class="what">Started AiNKI</p><p class="how">A flashcard service written in Rust, with FSRS scheduling.</p></div></li>
-<li><span class="yr">[Year]</span><div><p class="what">[Role], [Organization]</p><p class="how">[What you did there, in one sentence.]</p></div></li>
-<li><span class="yr">[Year]</span><div><p class="what">[Project or role]</p><p class="how">[What you did there, in one sentence.]</p></div></li>
-<li><span class="yr">[Year]</span><div><p class="what">[Degree], [University]</p><p class="how">[Subject, and a thesis title if there is one.]</p></div></li>
+<li><span class="yr">2026</span><div><p class="what">Started AiNKI</p><p class="how">An AI-native flashcard service in Rust. Self-hosted, open source.</p></div></li>
+<li><span class="yr"></span><div><p class="what">Head of IT, AStA, University of Bonn</p><p class="how">Leading a team of five that builds tools for the student government. Since March.</p></div></li>
+<li><span class="yr"></span><div><p class="what">Intern, Cyber Threat Intelligence, Deutsche Telekom Security</p><p class="how">Built Argus, a host intrusion detection system for hardware honeypots, in Go. February to April.</p></div></li>
+<li><span class="yr"></span><div><p class="what">B.Sc. Cyber Security, University of Bonn</p><p class="how">Thesis on social desirability bias and statistical lie detection in self-reported security practices.</p></div></li>
+<li><span class="yr">2025</span><div><p class="what">Co-authored a paper at SOUPS</p><p class="how"><a href="https://www.usenix.org/conference/soups2025/presentation/ortloff">“Replication: ‘No one can hack my mind’ 10 years later,”</a> on how experts and non-experts stay secure online.</p></div></li>
+<li><span class="yr">2023</span><div><p class="what">Tutor, Institute of Computer Science</p><p class="how">Exercise groups in programming, reviews of over 200 student projects and five revision courses of my own.</p></div></li>
 </ol>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Alongside</h2>
+<p class="lede">Chair of the computer science student council. Student representative for digitalization at the University of Bonn. Member of the advisory board of git.nrw.</p>
 </section>
 
 <section class="col sec">
@@ -137,17 +159,17 @@ UNTIL = '''<main>
 
 <section class="col sec">
 <h2 class="lab">Tools</h2>
-<p class="lede">Mostly Rust. Also Python, TypeScript and Go.</p>
+<p class="lede">Mostly Rust and Go. Also Python, TypeScript and C++.</p>
 </section>
 
 <section class="col sec">
 <h2 class="lab">More</h2>
-<p class="lede">A full CV is yours on request. <a href="/#elsewhere">Write to me</a>.</p>
+<p class="lede">A full CV is yours on request. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
 </section>
 </main>
 
 <footer class="col">
-<span>© 2026 Kolja [Surname]</span>
+<span>© 2026 Kolja von der Twer</span>
 <span>Updated October 29, 2026</span>
 </footer>'''
 
@@ -159,8 +181,8 @@ MISSING = '''<main>
 </main>'''
 
 for name, args in {
-    'index.html': ('Kolja [Surname] · Lately', 'What Kolja is doing right now: building AiNKI, flashcards that come back just before you forget them.', NOW),
-    'so-far.html': ('Kolja [Surname] · So far', 'What Kolja has done so far, as a short timeline.', UNTIL),
-    '404.html': ('Kolja [Surname] · Not found', '', MISSING),
+    'index.html': ('Kolja von der Twer · Lately', 'Kolja von der Twer studies computer science in Bonn and builds AiNKI, flashcards that come back just before you forget them.', NOW),
+    'so-far.html': ('Kolja von der Twer · So far', 'What Kolja von der Twer has done so far: cyber security in Bonn, threat intelligence at Telekom Security, teaching and AStA IT.', UNTIL),
+    '404.html': ('Kolja von der Twer · Not found', '', MISSING),
 }.items():
     open(f'{out}/{name}', 'w').write(page(*args))
