@@ -58,7 +58,7 @@ footer{margin-top:clamp(80px,9vw,112px);padding:24px 0 64px;border-top:1px solid
 def page(title, desc, current, body):
     nav = ''.join(
         f'<a href="{href}"{" aria-current=\"page\"" if key == current else ""}>{label}</a>'
-        for key, href, label in (('now', '/', 'Now'), ('until', '/until-now.html', 'Until now')))
+        for key, href, label in (('now', '/', 'Lately'), ('until', '/so-far.html', 'So far')))
     meta = f'<meta name="description" content="{desc}">\n' if desc else ''
     return f'''<!doctype html>
 <html lang="en">
@@ -86,11 +86,11 @@ def page(title, desc, current, body):
 '''
 
 NOW = '''<main>
-<h1 class="wide whoah">Now</h1>
+<h1 class="wide whoah">Lately</h1>
 
 <section class="col intro">
 <div class="portrait" role="img" aria-label="Portrait of Kolja (placeholder)">Portrait · 4:5</div>
-<p class="lede">I am Kolja. I live in Bonn and build AiNKI, flashcards that come back just before you forget them. This page says what I am doing at the moment. For everything before, see <a href="/until-now.html">Until now</a>.</p>
+<p class="lede">I am Kolja. I live in Bonn and build AiNKI, flashcards that come back just before you forget them. This page says what I am doing at the moment. For everything before, see <a href="/so-far.html">So far</a>.</p>
 <p class="meta">Updated October 29, 2026</p>
 </section>
 
@@ -122,7 +122,7 @@ NOW = '''<main>
 </footer>'''
 
 UNTIL = '''<main>
-<h1 class="wide whoah">Until now</h1>
+<h1 class="wide whoah">So far</h1>
 
 <section class="col intro">
 <p class="lede">[Two sentences on the thread that runs through what you have done. Plain facts, no adjectives about yourself.]</p>
@@ -165,13 +165,13 @@ UNTIL = '''<main>
 MISSING = '''<main>
 <h1 class="wide whoah">Not here</h1>
 <section class="col intro">
-<p class="lede">This page does not exist. Try <a href="/">Now</a> or <a href="/until-now.html">Until now</a>.</p>
+<p class="lede">This page does not exist. Try <a href="/">Lately</a> or <a href="/so-far.html">So far</a>.</p>
 </section>
 </main>'''
 
 for name, args in {
-    'index.html': ('Kolja [Surname] · Now', 'What Kolja is doing right now: building AiNKI, flashcards that come back just before you forget them.', 'now', NOW),
-    'until-now.html': ('Kolja [Surname] · Until now', 'What Kolja has done until now, as a short timeline.', 'until', UNTIL),
+    'index.html': ('Kolja [Surname] · Lately', 'What Kolja is doing right now: building AiNKI, flashcards that come back just before you forget them.', 'now', NOW),
+    'so-far.html': ('Kolja [Surname] · So far', 'What Kolja has done so far, as a short timeline.', 'until', UNTIL),
     '404.html': ('Kolja [Surname] · Not found', '', None, MISSING),
 }.items():
     open(f'{out}/{name}', 'w').write(page(*args))
