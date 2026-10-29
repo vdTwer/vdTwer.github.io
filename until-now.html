@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolja [Surname] · Until now</title>
+<meta name="description" content="What Kolja has done until now: a short timeline, from [first year] to 2026.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23a8336d'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Source Serif 4";src:url(fonts/serif.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/sans.woff2) format("woff2");font-weight:400 600;font-display:swap}
+@font-face{font-family:Fraunces;src:url(fonts/italic.woff2) format("woff2");font-weight:300 400;font-style:italic;font-display:swap}
+:root{--paper:#fff;--tint:#f6f5f3;--ink:#111;--ink-2:#3a3835;--muted:#5e5b57;--faint:#9a968f;--line:#e4e2de;--accent:#a8336d;--accent-hover:#8c2a5b;--accent-tint:#f6e6ee;--ph:#efedea;--sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Source Serif 4",Georgia,serif;--italic:Fraunces,Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--paper:#141312;--tint:#211f1d;--ink:#f1eee9;--ink-2:#d8d4cd;--muted:#a7a29a;--faint:#75706a;--line:#2f2c29;--accent:#e183b3;--accent-hover:#eda3c8;--accent-tint:#3a2130;--ph:#211f1d}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--accent-tint)}
+a{color:var(--accent);text-decoration:none;transition:color 140ms cubic-bezier(.25,.8,.25,1)}
+a:hover{color:var(--accent-hover)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.quiet{color:var(--ink-2)}
+.quiet:hover,.here{color:var(--accent)}
+.col{width:min(560px,100% - 48px);margin-inline:auto;position:relative}
+.wide{width:min(1040px,100% - 48px);margin-inline:auto}
+header{display:flex;justify-content:space-between;align-items:center;height:72px}
+.name{font-size:15px;font-weight:600;color:var(--ink)}
+nav{display:flex;gap:28px;font-size:15px}
+.kicker,.lab{margin:0;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hero{padding-top:clamp(88px,11vw,160px)}
+.kicker{margin-bottom:20px}
+h1{margin:0;padding-left:.02em;font:400 clamp(42px,5.2vw,72px)/1.05 var(--serif);letter-spacing:-.02em;text-wrap:pretty}
+.it{font-family:var(--italic);font-style:italic;font-weight:300;letter-spacing:-.01em}
+.actions{margin:32px 0 0;display:flex;flex-wrap:wrap;gap:10px;font-size:14px;line-height:1.4;font-weight:600;color:var(--faint)}
+.portrait{display:flex;align-items:flex-end;width:112px;aspect-ratio:4/5;margin:0 0 40px;padding:8px 10px;border-radius:2px;background:var(--ph);font-size:11px;line-height:1.3;color:var(--muted);object-fit:cover}
+section.sec{margin-top:clamp(56px,7vw,88px);padding-top:20px;border-top:1px solid var(--line)}
+section.first{margin-top:clamp(80px,9vw,120px)}
+.lab{margin-bottom:16px}
+.lede{margin:0;font:400 21px/1.5 var(--serif);text-wrap:pretty}
+.more{margin:16px 0 0;font-size:14px;line-height:1.4;font-weight:600}
+.line{display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-height:44px;padding:10px 0;border-bottom:1px solid var(--line)}
+.line span{color:var(--muted)}
+.line a{font:400 18px/1.4 var(--serif)}
+footer{margin-top:clamp(96px,10vw,136px);padding:24px 0 64px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:13px;line-height:1.45;color:var(--muted)}
+.photo{display:flex;align-items:flex-end;margin:96px auto 0;aspect-ratio:3/2;padding:14px 16px;border-radius:2px;background:var(--ph);font-size:12px;line-height:1.4;color:var(--muted)}
+.cap{display:flex;align-items:baseline;gap:10px;margin:10px auto 0;font-size:13px;line-height:1.3;color:var(--muted)}
+.no{font:italic 400 18px/1 var(--italic);color:var(--ink);font-variant-numeric:lining-nums}
+.intro{margin-top:28px;color:var(--ink-2)}
+ol.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:16px;padding:20px 0 22px;border-bottom:1px solid var(--line)}
+.tl li:first-child{padding-top:4px}
+.yr{font:italic 300 30px/1 var(--italic);letter-spacing:-.01em;font-variant-numeric:lining-nums;padding-top:2px}
+.what{margin:0;font:400 20px/1.3 var(--serif)}
+.how{margin:4px 0 0;font-size:14px;line-height:1.45;color:var(--muted)}
+@media (max-width:519px){.tl li{grid-template-columns:64px minmax(0,1fr)}.yr{font-size:24px}}
+@media (min-width:1200px){.kicker{position:absolute;left:-168px;top:calc(clamp(88px,11vw,160px) + 14px);width:128px;margin:0}}
+@media (min-width:1200px){
+.lab{position:absolute;left:-168px;top:-1px;width:168px;margin:0;padding-top:26px;border-top:1px solid var(--line)}
+.portrait{position:absolute;left:-168px;top:calc(clamp(88px,11vw,160px) + 10px);width:128px;margin:0}
+h1{margin-right:-240px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wide">
+<a class="name" href="./">Kolja [Surname]</a>
+<nav aria-label="Main">
+<a class="quiet" href="./">Now</a>
+<a class="here" href="until-now.html" aria-current="page">Until now</a>
+</nav>
+</header>
+
+<main>
+<section class="col hero">
+<p class="kicker">[First year] to 2026</p>
+<h1>Until <span class="it">now</span></h1>
+<p class="lede intro">[Two sentences on the thread that runs through what you have done. Plain facts, no adjectives about yourself.]</p>
+</section>
+
+<figure class="wide" style="margin:0 auto">
+<div class="photo" role="img" aria-label="Photograph of Kolja (placeholder)">Photograph of you · 3:2</div>
+<figcaption class="cap"><span class="no">[Year]</span><span>[Place]</span></figcaption>
+</figure>
+
+<section class="col sec first">
+<h2 class="lab">Timeline</h2>
+<ol class="tl" reversed>
+<li><span class="yr">2026</span><div><p class="what">Started AiNKI</p><p class="how">A flashcard service written in Rust, with FSRS scheduling and a calm desktop look.</p></div></li>
+<li><span class="yr">[Year]</span><div><p class="what">[Role], [Organization]</p><p class="how">[What you did there, in one sentence.]</p></div></li>
+<li><span class="yr">[Year]</span><div><p class="what">[Project or role]</p><p class="how">[What you did there, in one sentence.]</p></div></li>
+<li><span class="yr">[Year]</span><div><p class="what">[Degree], [University]</p><p class="how">[Subject, and a thesis title if there is one.]</p></div></li>
+</ol>
+</section>
+
+<section class="col sec">
+<h2 class="lab">Tools</h2>
+<p class="lede">Mostly Rust. Also Python, TypeScript and Go.</p>
+</section>
+
+<section class="col sec">
+<h2 class="lab">More</h2>
+<p class="lede">A full CV is yours on request. <a href="./#elsewhere">Write to me</a></p>
+</section>
+</main>
+
+<footer class="col">
+<span>Updated October 29, 2026</span>
+<a href="./">What I am doing now</a>
+</footer>
+</body>
+</html>
