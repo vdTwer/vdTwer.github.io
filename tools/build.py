@@ -30,6 +30,7 @@ p{margin:0}
 .lede+.lede{margin-top:16px}
 .next{margin-top:24px;font-size:14px;line-height:1.4;font-weight:600}
 .dot{margin:0 6px;color:var(--faint)}
+.end{margin-top:clamp(56px,7vw,80px)}
 .how a{color:var(--ink-2)}
 .how a:hover{color:var(--accent)}
 .portrait{display:block;width:112px;height:auto;aspect-ratio:4/5;margin:0 0 32px;object-fit:cover;border-radius:2px;background:var(--ph)}
@@ -124,6 +125,8 @@ NOW = '''<main>
 <div class="line"><span>GitHub</span><a href="https://github.com/vdTwer">vdTwer</a></div>
 <div class="line"><span>LinkedIn</span><a href="https://www.linkedin.com/in/kolja-von-der-twer-57a283377/">kolja-von-der-twer</a></div>
 </section>
+
+<p class="col next end"><a href="/so-far.html">How did I get here? →</a></p>
 </main>
 
 <footer class="col">
@@ -167,6 +170,8 @@ UNTIL = '''<main>
 <h2 class="lab">More</h2>
 <p class="lede">A full CV and references from Telekom Security, the Institute of Computer Science and the AStA are yours on request. <a href="mailto:kolja@twer.net">Write to me</a>.</p>
 </section>
+
+<p class="col next end"><a href="/">Where am I now? →</a></p>
 </main>
 
 <footer class="col">
